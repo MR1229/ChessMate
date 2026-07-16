@@ -1,0 +1,59 @@
+.timer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  padding: 6px 12px;
+  background-color: var(--color-card);
+  border: 1px solid var(--color-panel-border);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+}
+
+.infinite {
+  font-size: 18px;
+  color: var(--color-text-muted);
+}
+
+.active {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+/* Low Time: < 30 seconds */
+.active.lowTime {
+  background-color: #f97316; /* Orange */
+  color: #ffffff;
+  border-color: #f97316;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.3);
+}
+
+/* Critical Time: < 10 seconds */
+.active.criticalTime {
+  background-color: #ef4444; /* Red */
+  color: #ffffff;
+  border-color: #ef4444;
+  animation: pulse 1s infinite alternate;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.5);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+.timeStr {
+  font-variant-numeric: tabular-nums;
+}

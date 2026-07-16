@@ -1,0 +1,228 @@
+.lobbySidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 320px;
+  max-width: 100%;
+  padding: 24px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-panel-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid var(--color-panel-border);
+  padding-bottom: 16px;
+  margin-bottom: 8px;
+}
+
+.gamingIcon {
+  font-size: 32px;
+  line-height: 1;
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-accent);
+}
+
+.header h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.presetsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.presetBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 4px;
+  background: var(--color-card);
+  border: 1px solid var(--color-panel-border);
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  transition: all 0.2s ease;
+}
+
+.presetBtn:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.activePreset {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  box-shadow: 0 0 6px var(--color-accent-soft);
+}
+
+.presetName {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.presetCat {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.toggleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: var(--color-card);
+  border: 1px solid var(--color-panel-border);
+  border-radius: 6px;
+}
+
+.toggleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toggleLabel {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.toggleDesc {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* Custom switch toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: var(--color-panel-border);
+  transition: .3s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background-color: var(--color-accent);
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+.startBtn {
+  width: 100%;
+  padding: 14px;
+  background: var(--color-accent);
+  border: none;
+  border-radius: 8px;
+  color: #1a1a1a;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 10px rgba(200, 162, 78, 0.2);
+  margin-top: 8px;
+}
+
+.startBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(200, 162, 78, 0.3);
+  filter: brightness(1.1);
+}
+
+.startBtn:active {
+  transform: translateY(0);
+}
+
+.welcomeGraphic {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  margin: 10px 0;
+  background-color: rgba(11, 22, 40, 0.45);
+  
+  /* 45-degree tilted diagonal checkerboard boxes */
+  background-image: 
+    linear-gradient(45deg, rgba(96, 165, 250, 0.07) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(96, 165, 250, 0.07) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(96, 165, 250, 0.07) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(96, 165, 250, 0.07) 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 0 12px, 12px -12px, -12px 0px;
+  
+  border: 1px solid var(--color-panel-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.35);
+}
+
+.welcomePiece {
+  font-size: 64px;
+  color: var(--color-accent);
+  text-shadow: 0 0 20px var(--color-accent), 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}

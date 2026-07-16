@@ -1,0 +1,117 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+}
+
+.modal {
+  position: relative;
+  background: var(--color-panel);
+  border: 1px solid var(--color-panel-border);
+  border-radius: 16px;
+  padding: 36px;
+  width: 440px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: var(--shadow);
+  animation: slideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.15s ease;
+}
+
+.closeBtn:hover {
+  color: var(--color-text);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.trophy {
+  font-size: 54px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.modal h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  margin: 0 0 10px;
+}
+
+.outcome {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 6px;
+}
+
+.sub {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: 32px;
+}
+
+.btnRow {
+  display: flex;
+  gap: 12px;
+}
+
+.lobbyBtn,
+.playAgainBtn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lobbyBtn {
+  background: transparent;
+  border: 1px solid var(--color-panel-border);
+  color: var(--color-text);
+}
+
+.lobbyBtn:hover {
+  border-color: var(--color-text-muted);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.playAgainBtn {
+  background: var(--color-accent);
+  border: none;
+  color: #1a1a1a;
+  box-shadow: 0 4px 10px rgba(200, 162, 78, 0.2);
+}
+
+.playAgainBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(200, 162, 78, 0.3);
+  filter: brightness(1.1);
+}

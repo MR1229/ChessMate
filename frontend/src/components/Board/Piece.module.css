@@ -1,0 +1,20 @@
+.pieceText {
+  font-size: clamp(32px, 6.8vw, 54px);
+  line-height: 1;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45));
+}
+
+.pieceWhite {
+  color: #ffffff; /* Bright crisp pure white */
+  -webkit-text-stroke: 1.5px #111827; /* Rich black border outline */
+}
+
+.pieceBlack {
+  color: #242933; /* Rich deep charcoal-navy (brighter and less dull than pure dark black) */
+  -webkit-text-stroke: 1px #090d16; /* Defined border */
+}
